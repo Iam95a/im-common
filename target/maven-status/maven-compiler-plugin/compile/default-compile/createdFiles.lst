@@ -3,6 +3,7 @@ com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$User$1.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$GroupMessage$1.class
 com\chen\im\common\protobuf\RequestMessageProto$1.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$Builder.class
+com\chen\im\common\constant\Constant.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessageOrBuilder.class
 com\chen\im\common\protobuf\RequestMessageProto.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$User.class
@@ -14,7 +15,9 @@ com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$GroupMessage$Buil
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$SingleMessageOrBuilder.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$SingleMessage$1.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage.class
+com\chen\im\common\dto\SingleMessage.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$ParamsDefaultEntryHolder.class
+com\chen\im\common\dto\User.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$SingleMessage.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$1.class
 com\chen\im\common\protobuf\RequestMessageProto$RequestMessage$User$Builder.class
