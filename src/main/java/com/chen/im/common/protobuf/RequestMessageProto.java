@@ -93,38 +93,14 @@ public final class RequestMessageProto {
         getCommandBytes();
 
     /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
+     * <code>string params = 10;</code>
      */
-    int getParamsCount();
+    java.lang.String getParams();
     /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
+     * <code>string params = 10;</code>
      */
-    boolean containsParams(
-        java.lang.String key);
-    /**
-     * Use {@link #getParamsMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getParams();
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getParamsMap();
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-
-    java.lang.String getParamsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-
-    java.lang.String getParamsOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ByteString
+        getParamsBytes();
 
     /**
      * <code>int32 code = 11;</code>
@@ -146,6 +122,7 @@ public final class RequestMessageProto {
     private RequestMessage() {
       content_ = "";
       command_ = "";
+      params_ = "";
     }
 
     @java.lang.Override
@@ -168,7 +145,6 @@ public final class RequestMessageProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -246,16 +222,9 @@ public final class RequestMessageProto {
               break;
             }
             case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                params_ = com.google.protobuf.MapField.newMapField(
-                    ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              params__ = input.readMessage(
-                  ParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              params_.getMutableMap().put(
-                  params__.getKey(), params__.getValue());
+              java.lang.String s = input.readStringRequireUtf8();
+
+              params_ = s;
               break;
             }
             case 88: {
@@ -287,18 +256,6 @@ public final class RequestMessageProto {
       return com.chen.im.common.protobuf.RequestMessageProto.internal_static_RequestMessage_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 10:
-          return internalGetParams();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -2583,79 +2540,37 @@ public final class RequestMessageProto {
     }
 
     public static final int PARAMS_FIELD_NUMBER = 10;
-    private static final class ParamsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.chen.im.common.protobuf.RequestMessageProto.internal_static_RequestMessage_ParamsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> params_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetParams() {
-      if (params_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParamsDefaultEntryHolder.defaultEntry);
+    private volatile java.lang.Object params_;
+    /**
+     * <code>string params = 10;</code>
+     */
+    public java.lang.String getParams() {
+      java.lang.Object ref = params_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        params_ = s;
+        return s;
       }
-      return params_;
-    }
-
-    public int getParamsCount() {
-      return internalGetParams().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
+     * <code>string params = 10;</code>
      */
-
-    public boolean containsParams(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetParams().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getParamsMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getParams() {
-      return getParamsMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
-      return internalGetParams().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParams().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; params = 10;</code>
-     */
-
-    public java.lang.String getParamsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParams().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
+    public com.google.protobuf.ByteString
+        getParamsBytes() {
+      java.lang.Object ref = params_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        params_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return map.get(key);
     }
 
     public static final int CODE_FIELD_NUMBER = 11;
@@ -2705,12 +2620,9 @@ public final class RequestMessageProto {
       if (!getCommandBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, command_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetParams(),
-          ParamsDefaultEntryHolder.defaultEntry,
-          10);
+      if (!getParamsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, params_);
+      }
       if (code_ != 0) {
         output.writeInt32(11, code_);
       }
@@ -2753,15 +2665,8 @@ public final class RequestMessageProto {
       if (!getCommandBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, command_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetParams().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        params__ = ParamsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, params__);
+      if (!getParamsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, params_);
       }
       if (code_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -2807,8 +2712,8 @@ public final class RequestMessageProto {
       }
       if (!getCommand()
           .equals(other.getCommand())) return false;
-      if (!internalGetParams().equals(
-          other.internalGetParams())) return false;
+      if (!getParams()
+          .equals(other.getParams())) return false;
       if (getCode()
           != other.getCode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2846,10 +2751,8 @@ public final class RequestMessageProto {
       }
       hash = (37 * hash) + COMMAND_FIELD_NUMBER;
       hash = (53 * hash) + getCommand().hashCode();
-      if (!internalGetParams().getMap().isEmpty()) {
-        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetParams().hashCode();
-      }
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2959,28 +2862,6 @@ public final class RequestMessageProto {
         return com.chen.im.common.protobuf.RequestMessageProto.internal_static_RequestMessage_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 10:
-            return internalGetParams();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 10:
-            return internalGetMutableParams();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -3035,7 +2916,8 @@ public final class RequestMessageProto {
         }
         command_ = "";
 
-        internalGetMutableParams().clear();
+        params_ = "";
+
         code_ = 0;
 
         return this;
@@ -3064,7 +2946,6 @@ public final class RequestMessageProto {
       @java.lang.Override
       public com.chen.im.common.protobuf.RequestMessageProto.RequestMessage buildPartial() {
         com.chen.im.common.protobuf.RequestMessageProto.RequestMessage result = new com.chen.im.common.protobuf.RequestMessageProto.RequestMessage(this);
-        int from_bitField0_ = bitField0_;
         result.msgId_ = msgId_;
         result.sender_ = sender_;
         result.type_ = type_;
@@ -3085,8 +2966,7 @@ public final class RequestMessageProto {
           result.groupMessage_ = groupMessageBuilder_.build();
         }
         result.command_ = command_;
-        result.params_ = internalGetParams();
-        result.params_.makeImmutable();
+        result.params_ = params_;
         result.code_ = code_;
         onBuilt();
         return result;
@@ -3162,8 +3042,10 @@ public final class RequestMessageProto {
           command_ = other.command_;
           onChanged();
         }
-        internalGetMutableParams().mergeFrom(
-            other.internalGetParams());
+        if (!other.getParams().isEmpty()) {
+          params_ = other.params_;
+          onChanged();
+        }
         if (other.getCode() != 0) {
           setCode(other.getCode());
         }
@@ -3195,7 +3077,6 @@ public final class RequestMessageProto {
         }
         return this;
       }
-      private int bitField0_;
 
       private long msgId_ ;
       /**
@@ -3764,126 +3645,72 @@ public final class RequestMessageProto {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> params_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetParams() {
-        if (params_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ParamsDefaultEntryHolder.defaultEntry);
+      private java.lang.Object params_ = "";
+      /**
+       * <code>string params = 10;</code>
+       */
+      public java.lang.String getParams() {
+        java.lang.Object ref = params_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          params_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-        return params_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableParams() {
-        onChanged();;
-        if (params_ == null) {
-          params_ = com.google.protobuf.MapField.newMapField(
-              ParamsDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>string params = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getParamsBytes() {
+        java.lang.Object ref = params_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          params_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        if (!params_.isMutable()) {
-          params_ = params_.copy();
-        }
-        return params_;
-      }
-
-      public int getParamsCount() {
-        return internalGetParams().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
+       * <code>string params = 10;</code>
        */
-
-      public boolean containsParams(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetParams().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getParamsMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getParams() {
-        return getParamsMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getParamsMap() {
-        return internalGetParams().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
-       */
-
-      public java.lang.String getParamsOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetParams().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
-       */
-
-      public java.lang.String getParamsOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetParams().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearParams() {
-        internalGetMutableParams().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
-       */
-
-      public Builder removeParams(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableParams().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableParams() {
-        return internalGetMutableParams().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
-       */
-      public Builder putParams(
-          java.lang.String key,
+      public Builder setParams(
           java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableParams().getMutableMap()
-            .put(key, value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        params_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; params = 10;</code>
+       * <code>string params = 10;</code>
        */
-
-      public Builder putAllParams(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableParams().getMutableMap()
-            .putAll(values);
+      public Builder clearParams() {
+        
+        params_ = getDefaultInstance().getParams();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string params = 10;</code>
+       */
+      public Builder setParamsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        params_ = value;
+        onChanged();
         return this;
       }
 
@@ -3985,11 +3812,6 @@ public final class RequestMessageProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_RequestMessage_GroupMessage_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RequestMessage_ParamsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RequestMessage_ParamsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3999,22 +3821,20 @@ public final class RequestMessageProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023SingleMessage.proto\"\233\004\n\016RequestMessage" +
+      "\n\023SingleMessage.proto\"\317\003\n\016RequestMessage" +
       "\022\r\n\005msgId\030\001 \001(\003\022\016\n\006sender\030\002 \001(\003\022\014\n\004type\030" +
       "\004 \001(\005\022\017\n\007content\030\005 \001(\t\022\"\n\004user\030\006 \001(\0132\024.R" +
       "equestMessage.User\0224\n\rsingleMessage\030\007 \001(" +
       "\0132\035.RequestMessage.SingleMessage\0222\n\014grou" +
       "pMessage\030\010 \001(\0132\034.RequestMessage.GroupMes" +
-      "sage\022\017\n\007command\030\t \001(\t\022+\n\006params\030\n \003(\0132\033." +
-      "RequestMessage.ParamsEntry\022\014\n\004code\030\013 \001(\005" +
-      "\032:\n\004User\022\016\n\006userId\030\001 \001(\003\022\020\n\010nickname\030\002 \001" +
-      "(\t\022\020\n\010password\030\003 \001(\t\032D\n\rSingleMessage\022\016\n" +
-      "\006sender\030\001 \001(\003\022\022\n\nreceiverId\030\002 \001(\003\022\017\n\007con" +
-      "tent\030\003 \001(\t\032@\n\014GroupMessage\022\016\n\006sender\030\001 \001" +
-      "(\003\022\017\n\007groupId\030\002 \001(\003\022\017\n\007content\030\003 \001(\t\032-\n\013" +
-      "ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001B2\n\033com.chen.im.common.protobufB\023Requ" +
-      "estMessageProtob\006proto3"
+      "sage\022\017\n\007command\030\t \001(\t\022\016\n\006params\030\n \001(\t\022\014\n" +
+      "\004code\030\013 \001(\005\032:\n\004User\022\016\n\006userId\030\001 \001(\003\022\020\n\010n" +
+      "ickname\030\002 \001(\t\022\020\n\010password\030\003 \001(\t\032D\n\rSingl" +
+      "eMessage\022\016\n\006sender\030\001 \001(\003\022\022\n\nreceiverId\030\002" +
+      " \001(\003\022\017\n\007content\030\003 \001(\t\032@\n\014GroupMessage\022\016\n" +
+      "\006sender\030\001 \001(\003\022\017\n\007groupId\030\002 \001(\003\022\017\n\007conten" +
+      "t\030\003 \001(\tB2\n\033com.chen.im.common.protobufB\023" +
+      "RequestMessageProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4044,12 +3864,6 @@ public final class RequestMessageProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RequestMessage_GroupMessage_descriptor,
         new java.lang.String[] { "Sender", "GroupId", "Content", });
-    internal_static_RequestMessage_ParamsEntry_descriptor =
-      internal_static_RequestMessage_descriptor.getNestedTypes().get(3);
-    internal_static_RequestMessage_ParamsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RequestMessage_ParamsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

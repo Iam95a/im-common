@@ -18,6 +18,7 @@ message RequestMessage{
         int64 groupId=2;
         string content=3;
     }
+
 	int64 msgId=1;
 	int64 sender=2;
 	int32 type=4;
@@ -26,6 +27,6 @@ message RequestMessage{
 	SingleMessage singleMessage=7;
 	GroupMessage groupMessage=8;
 	string command=9;
-	map<string,string> params=10;
+	string params=10;
 	int32 code=11;
 }
